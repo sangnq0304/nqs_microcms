@@ -1,0 +1,11 @@
+@use './reset' as *;
+@use './mixins.scss' as *;
+@import "tailwindcss";
+
+.page-title {
+    @include heading-title(20px, 700, #000);
+    @include mobile {
+        @include heading-title(18px, 700, #000);
+        @apply text-center;
+    }
+}

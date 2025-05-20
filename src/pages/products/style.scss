@@ -1,0 +1,10 @@
+@use '@/styles/mixins.scss' as *;
+.product-page {
+    .page-title {
+        @apply relative;
+    }
+    
+    .short-txt {
+        @include heading-title(16px, 400, #999, 1.5)
+    }
+}
