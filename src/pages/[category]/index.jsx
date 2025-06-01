@@ -21,6 +21,10 @@ export default function CategoryPage({ posts, errorMessage, category, categories
         <>
             <Head>
                 <title>{`Tin tức ${category}`}</title>
+                <meta key="og:title" property="og:title" content={`Tin tức ${category}`} />
+                <meta key="og:description" property="og:description" content={category} />
+                <meta key="og:image" property="og:image" content={`${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`} />
+                <meta key="og:url" property="og:url" content={`${process.env.NEXT_PUBLIC_SITE_URL}/${category}`} />
             </Head>
             <div className="container">
                 <h2 className="page-title">Danh mục: {category}</h2>
