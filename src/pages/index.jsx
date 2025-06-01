@@ -39,10 +39,15 @@ export default function Home({ dataNewNews, categories, errorMessage }) {
 
 export async function getServerSideProps() {
     try {
-        // Lấy bài viết mới nhất
+        // Lấy bài viết mới nhất thuộc danh mục "tin-moi"
         const newNews = RepositoryFactory.get("news");
         const responseNewNews = await newNews.getListByCategory("tin-moi");
-        const dataNewNews = responseNewNews?.data?.contents;
+        const dataNewNews = responseNewNews?.data?.contents || [];
+
+        const postsWithCategory = dataNewNews.map(post => ({
+            ...post,
+            category: { id: 'tin-moi' } 
+        }));
 
         // Lấy toàn bộ các danh mục làm menu
         const listCategory = RepositoryFactory.get("categories");
@@ -53,7 +58,7 @@ export async function getServerSideProps() {
         return {
             props: {
                 categories,
-                dataNewNews,
+                dataNewNews: postsWithCategory,
             },
         };
     } catch (e) {
@@ -63,7 +68,7 @@ export async function getServerSideProps() {
         return {
             props: {
                 categories: [],
-                dataNewNews,
+                dataNewNews: [],
                 errorMessage,
             },
         };
