@@ -18,12 +18,47 @@
         }
 
         &-item {
+            position: relative;
+            &:hover {
+                .header__nav-sub-list {
+                    top: 42px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .header__nav-link {
+                    color: #1a7900;
+                }
+            }
+
+            &--active {
+                .header__nav-link {
+                    color: #1a7900;
+                }
+            }
         }
 
         &-link {
             display: block;
             padding: 10px 0px;
-            &.active, &:hover {
+        }
+    }
+
+    &__nav-sub-list {
+        position: absolute;
+        min-width: 150px;
+        background: #eee;
+        top: 60px;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: ease-in 0.2s;
+
+        &-link {
+            display: block;
+            padding: 5px 10px;
+            border-bottom: 1px solid #d5d5d5;
+            &:hover {
                 color: #1a7900;
             }
         }
