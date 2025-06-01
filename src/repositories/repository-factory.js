@@ -1,8 +1,8 @@
-import ProductsRepository from "./config/products.js";
-import UsersRepository from "./config/users.js";
+import PostsRepository from "./config/posts";
+import CategoriesRepository from "./config/categories";
 const repositories = {
-    products: ProductsRepository,
-    users: UsersRepository
+    news: PostsRepository,
+    categories: CategoriesRepository
 };
 
 export const RepositoryFactory = {

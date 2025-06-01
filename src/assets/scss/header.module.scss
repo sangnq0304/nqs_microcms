@@ -1,0 +1,31 @@
+.header {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__logo-link {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    &__nav {
+        &-list {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        &-item {
+        }
+
+        &-link {
+            display: block;
+            padding: 10px 0px;
+            &.active, &:hover {
+                color: #1a7900;
+            }
+        }
+    }
+}

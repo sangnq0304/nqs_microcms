@@ -2,6 +2,10 @@
 @use './mixins.scss' as *;
 @import "tailwindcss";
 
+.container {
+    @apply max-w-7xl px-4 mx-auto;
+}
+
 .page-title {
     @include heading-title(20px, 700, #000);
     @include mobile {

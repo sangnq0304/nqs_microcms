@@ -1,0 +1,39 @@
+@use '@/styles/mixins.scss' as *;
+
+.grid-post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.grid-item {
+    flex: 0 0 calc((100% - (4 - 1) * 16px) / 4);
+    box-sizing: border-box;
+}
+
+.post {
+    position: relative;
+
+    &__thumb {
+        height: 200px;
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__link {
+        display: block;
+        @include heading-title(16px, 600, #000, 1.3);
+        &:hover {
+            color: #1a7900;
+        }
+    }
+
+    &__excerpt {
+        @include heading-title(14px, 400, #565656, 1.4);
+        font-style: normal;
+    }
+}

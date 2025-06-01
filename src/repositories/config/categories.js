@@ -1,8 +1,8 @@
 import Repository from "../repository";
-const resource = "users";
+const resource = 'categories';
 
 export default {
-    getListUser() {
+    getCategories() {
         return Repository.get(`${resource}`);
     }
 }

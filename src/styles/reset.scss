@@ -7,7 +7,7 @@ body {
     color: #000;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.4;
     overflow-x: hidden;
 }
 
@@ -16,9 +16,11 @@ main {
     display: block;
 }
 
-h1, h2, h3, p, ul {
+h1, h2, h3, h4 p, ul, em {
     margin: 0;
     padding: 0;
+    font-style: inherit;
+    font-size: inherit;
 }
 
 ul li {
